@@ -17,13 +17,27 @@ public class Main {
             System.out.println("Держитесь! Осталось " + start + " метров.");
             start = start - 500;
         }
-        while ( start > 0);
+        while (start > 0);
 
         System.out.println("Задание 2, вторая часть"); // с испольованием for
 
         int start2 = 42_195;
-        for (i = start2; i > 0; i -= 500 ) {
+        for (i = start2; i > 0; i -= 500) {
             System.out.println("Держитесь! Осталось " + i + " метров.");
+        }
+
+        System.out.println("Задание 3");
+
+        int money = 1_500; // сумма
+        int day = 1;
+        while (money > 0) {
+            day = day + 1;
+            money = money - 100;
+            System.out.println(day + " день, " + money + " денег на счете.");
+        if (day % 5 == 0) {
+            continue;
+        }
+            System.out.println("День бесплатной парковки.");
         }
     }
 }
