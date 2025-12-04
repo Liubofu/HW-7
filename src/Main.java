@@ -38,6 +38,6 @@ public class Main {
             money = money - 100;
             System.out.println(day + " день, " + money + " денег на счете.");
         }
-        System.out.println("День бесплатной парковки.");
+        System.out.println("Денги кончились.");
     }
 }
