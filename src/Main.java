@@ -32,12 +32,12 @@ public class Main {
         int day = 1;
         while (money > 0) {
             day = day + 1;
+            if (day % 5 == 0) {
+                continue;
+            }
             money = money - 100;
             System.out.println(day + " день, " + money + " денег на счете.");
-        if (day % 5 == 0) {
-            continue;
         }
-            System.out.println("День бесплатной парковки.");
-        }
+        System.out.println("День бесплатной парковки.");
     }
 }
