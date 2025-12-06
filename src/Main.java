@@ -53,7 +53,43 @@ public class Main {
             System.out.println(day2 + " день, " + money2 + " рублей на счете.");
         }
         System.out.println("Денги кончились.");
+
+        System.out.println("Задание 4");
+
+        int month = 0;
+        int total = 0;
+        int moneySave = 15_000;
+        while (total < 12_000_000) {
+            month++;
+            total = total + moneySave;
+            System.out.println("Месяц " + month + ", накоплено " + total);
+            if (month % 6 == 0) {
+                total = (int) (total + total * 1.07);
+                System.out.println(total + " накоплено за " + month + " месяцев");
+            }
+            if (total >= 12_000_000) {
+                System.out.println(total + " цель достигнута за " + month + " месяцев");
+                break;
+            }
         }
 
+        System.out.println("Задание 5");
 
+        int charge = 20;
+        int minute = 0;
+        int overheats = 0;
+        while (charge < 100 && overheats <= 3) {
+            minute++;
+            charge = charge + 2;
+            if (overheats == 3) {
+                break;
+            }
+            if (minute % 10 == 0) {
+                overheats++;
+                minute += 2;
+                continue;
+            } System.out.println("Случился перегрев " + overheats + ", зарядка остановлена.");
+            System.out.println("Время зарядки составило " + minute + " минут.");
+        }
     }
+}
