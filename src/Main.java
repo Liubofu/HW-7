@@ -26,7 +26,7 @@ public class Main {
             System.out.println("Держитесь! Осталось " + i + " метров.");
         }
 
-        System.out.println("Задание 3");
+        System.out.println("Задание 3, первая часть"); // с конструкцией while
 
         int money = 1_500; // сумма
         int day = 1;
@@ -36,8 +36,24 @@ public class Main {
                 continue;
             }
             money = money - 100;
-            System.out.println(day + " день, " + money + " денег на счете.");
+            System.out.println(day + " день, " + money + " рублей на счете.");
         }
         System.out.println("Денги кончились.");
+
+        System.out.println("Задание 3, вторая часть"); // с конструкцией for
+
+        int money2 = 1_500;
+        int day2 = 1;
+        for (; money2 > 0; ) {
+            day2 = day2 + 1;
+            if (day2 % 5 == 0) {
+                continue;
+            }
+            money2 = money2 - 100;
+            System.out.println(day2 + " день, " + money2 + " рублей на счете.");
+        }
+        System.out.println("Денги кончились.");
+        }
+
+
     }
-}
