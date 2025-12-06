@@ -84,11 +84,12 @@ public class Main {
             if (overheats == 3) {
                 break;
             }
+            overheats++;
             if (minute % 10 == 0) {
-                overheats++;
                 minute += 2;
                 continue;
-            } System.out.println("Случился перегрев " + overheats + ", зарядка остановлена.");
+            }
+            System.out.println("Случился перегрев " + overheats + ", зарядка остановлена, текущий заряд " + charge + " %.");
             System.out.println("Время зарядки составило " + minute + " минут.");
         }
     }
