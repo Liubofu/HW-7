@@ -5,8 +5,7 @@ public class Main {
         System.out.println("Задание 1");
 
         int firstFriday = 7;
-        int i = firstFriday;
-        for (; i <= 31; i += 7) {
+        for (int i = firstFriday; i <= 31; i += 7) {
             System.out.println("Сегодня пятница " + i + " -е число. Необходимо подготовить отчет.");
         }
 
@@ -22,7 +21,7 @@ public class Main {
         System.out.println("Задание 2, вторая часть"); // с испольованием for
 
         int start2 = 42_195;
-        for (i = start2; i > 0; i -= 500) {
+        for (int i = start2; i > 0; i -= 500) {
             System.out.println("Держитесь! Осталось " + i + " метров.");
         }
 
@@ -42,9 +41,8 @@ public class Main {
 
         System.out.println("Задание 3, вторая часть"); // с конструкцией for
 
-        int money2 = 1_500;
         int day2 = 1;
-        for (; money2 > 0; ) {
+        for (int money2 = 1_500; money2 > 0; ) {
             day2 = day2 + 1;
             if (day2 % 5 == 0) {
                 continue;
@@ -57,18 +55,20 @@ public class Main {
         System.out.println("Задание 4");
 
         int month = 0;
-        int total = 0;
+        double total = 0;
         int moneySave = 15_000;
+        int percent = 7;
         while (total < 12_000_000) {
             month++;
             total = total + moneySave;
-            System.out.println("Месяц " + month + ", накоплено " + total);
+            String formattedTotal = String.format("%.2f", total);
+            System.out.println("Месяц " + month + ", накоплено " + formattedTotal);
             if (month % 6 == 0) {
-                total = (int) (total + total * 1.07);
-                System.out.println(total + " накоплено за " + month + " месяцев");
+                total = total + (total + percent);
+                System.out.println(formattedTotal + " накоплено за " + month + " месяцев");
             }
             if (total >= 12_000_000) {
-                System.out.println(total + " цель достигнута за " + month + " месяцев");
+                System.out.println(formattedTotal + " цель достигнута за " + month + " месяцев");
                 break;
             }
         }
