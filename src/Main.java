@@ -81,15 +81,15 @@ public class Main {
         while (charge < 100 && overheats <= 3) {
             minute++;
             charge = charge + 2;
-            if (overheats == 3) {
-                break;
-            }
-            overheats++;
             if (minute % 10 == 0) {
+                overheats++;
                 minute += 2;
                 continue;
             }
             System.out.println("Случился перегрев " + overheats + ", зарядка остановлена, текущий заряд " + charge + " %.");
+            if (overheats == 3) {
+                break;
+            }
             System.out.println("Время зарядки составило " + minute + " минут.");
         }
     }
