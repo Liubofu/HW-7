@@ -56,15 +56,15 @@ public class Main {
 
         int month = 0;
         double total = 0;
-        int moneySave = 15_000;
-        int percent = 7;
+        double moneySave = 15_000;
+        double percent = 0.07;
         while (total < 12_000_000) {
             month++;
             total = total + moneySave;
             String formattedTotal = String.format("%.2f", total);
             System.out.println("Месяц " + month + ", накоплено " + formattedTotal);
             if (month % 6 == 0) {
-                total = total + (total + percent);
+                total = total + (total*percent);
                 System.out.println(formattedTotal + " накоплено за " + month + " месяцев");
             }
             if (total >= 12_000_000) {
