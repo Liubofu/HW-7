@@ -83,27 +83,27 @@ public class Main {
             if (minute % 10 == 0) {
                 overheats++;
                 System.out.println("Минута " + minute + ": Перегрев! Зарядка приостановлена на 2 минуты");
+                if (minute + 1 <= 100) {
+                    minute++;
+                    System.out.println("Минута " + minute + ": Зарядка приостановлена");
+                }
+                if (minute + 2 <= 100) {
+                    minute++;
+                    System.out.println("Минута " + minute + ": Зарядка возобновлена");
+                    continue;
+                }
+                charge = charge + 2;
+                System.out.println("Минута " + minute + ": Текущий заряд: " + charge + "%");
+                if (overheats >= 3) {
+                    System.out.println("Зарядка прекращена. Текущий заряд: " + charge + "%");
+                }
+                if (charge >= 100) {
+                    System.out.println("Устройство заряжено.");
+                    break;
+                }
             }
-            if (minute + 1 <= 100) {
-                minute++;
-                System.out.println("Минута " + minute + ": Зарядка приостановлена");
-            }
-            if (minute + 2 <= 100) {
-                minute++;
-                System.out.println("Минута " + minute + ": Зарядка возобновлена");
-                continue;
-            }
-            charge = charge + 2;
-            System.out.println("Минута " + minute + ": Текущий заряд: " + charge + "%");
-            if (overheats >= 3) {
-                System.out.println("Зарядка прекращена. Текущий заряд: " + charge + "%");
-            }
-            if (charge >= 100) {
-                System.out.println("Устройство заряжено.");
-                break;
-            }
+            System.out.println("Время зарядки составило " + minute + " минут.");
         }
-        System.out.println("Время зарядки составило " + minute + " минут.");
     }
 }
 
