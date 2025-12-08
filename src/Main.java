@@ -64,7 +64,7 @@ public class Main {
             String formattedTotal = String.format("%.2f", total);
             System.out.println("Месяц " + month + ", накоплено " + formattedTotal);
             if (month % 6 == 0) {
-                total = total + (total*percent);
+                total = total + (total * percent);
                 System.out.println(formattedTotal + " накоплено за " + month + " месяцев");
             }
             if (total >= 12_000_000) {
@@ -82,14 +82,28 @@ public class Main {
             minute++;
             if (minute % 10 == 0) {
                 overheats++;
-                minute += 2;
-                charge = charge + 2;
+                System.out.println("Минута " + minute + ": Перегрев! Зарядка приостановлена на 2 минуты");
+            }
+            if (minute + 1 <= 100) {
+                minute++;
+                System.out.println("Минута " + minute + ": Зарядка приостановлена");
+            }
+            if (minute + 2 <= 100) {
+                minute++;
+                System.out.println("Минута " + minute + ": Зарядка возобновлена");
                 continue;
             }
+            charge = charge + 2;
+            System.out.println("Минута " + minute + ": Текущий заряд: " + charge + "%");
             if (overheats >= 3) {
+                System.out.println("Зарядка прекращена. Текущий заряд: " + charge + "%");
+            }
+            if (charge >= 100) {
+                System.out.println("Устройство заряжено.");
                 break;
             }
-            System.out.println("Время зарядки составило " + minute + " минут.");
-        }System.out.println("Случился перегрев " + overheats + ", зарядка остановлена, текущий заряд " + charge + " %.");
+        }
+        System.out.println("Время зарядки составило " + minute + " минут.");
     }
 }
+
