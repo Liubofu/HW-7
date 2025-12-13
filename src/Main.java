@@ -90,8 +90,9 @@ public class Main {
                 if (minute + 2 <= 100) {
                     minute++;
                     System.out.println("Минута " + minute + ": Зарядка возобновлена");
-                    continue;
                 }
+                continue;
+            }
                 charge = charge + 2;
                 System.out.println("Минута " + minute + ": Текущий заряд: " + charge + "%");
                 if (overheats >= 3) {
@@ -105,5 +106,4 @@ public class Main {
             System.out.println("Время зарядки составило " + minute + " минут.");
         }
     }
-}
 
